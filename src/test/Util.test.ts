@@ -12,7 +12,7 @@ describe.only("StringUtils tests", () => {
     const actual = sut.toUpperCase("abc");
     expect(actual).toBe("ABC");
   });
-  it("Should throw error on invalid argument - function", () => {
+  it("Should  throw error on invalid argument - function", () => {
     function expectError() {
       const actual = sut.toUpperCase("");
     }
