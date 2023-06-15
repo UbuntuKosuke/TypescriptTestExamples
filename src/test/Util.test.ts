@@ -8,13 +8,8 @@ describe.only("StringUtils tests", () => {
     console.log("start up");
   });
 
-  afterEach(() => {
-    console.log("throw down");
-  });
-
   it("Should return correct uppercase", () => {
     console.log("actual test");
-    const sut = new StringUtils();
     const actual = sut.toUpperCase("abc");
 
     expect(actual).toBe("ABC");
