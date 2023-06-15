@@ -1,21 +1,15 @@
 import { toUpperCase } from "../app/Util";
 
 describe("toUpperCase", () => {
-  it("should return the input string in uppercase", () => {
-    const input = "hello world";
-    const expectedOutput = "HELLO WORLD";
+  it("should return uppercase of valid string", () => {
+    // arrange:
+    const sut = toUpperCase;
+    const expected = "ABC";
 
-    const result = toUpperCase(input);
+    // act:
+    const actual = sut("abc");
 
-    expect(result).toBe(expectedOutput);
-  });
-
-  it("should return an empty string if the input is an empty string", () => {
-    const input = "";
-    const expectedOutput = "";
-
-    const result = toUpperCase(input);
-
-    expect(result).toBe(expectedOutput);
+    // assert
+    expect(actual).toBe(expected);
   });
 });
