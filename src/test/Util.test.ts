@@ -9,10 +9,34 @@ describe.only("StringUtils tests", () => {
   });
 
   it("Should return correct uppercase", () => {
-    console.log("actual test");
     const actual = sut.toUpperCase("abc");
-
     expect(actual).toBe("ABC");
+  });
+  it("Should throw error on invalid argument - function", () => {
+    function expectError() {
+      const actual = sut.toUpperCase("");
+    }
+    expect(expectError).toThrow();
+    expect(expectError).toThrowError("Invalid argument!");
+    console.log("Actual test");
+  });
+
+  it("Should throw error on invalid argument - arrow function", () => {
+    expect(() => {
+      sut.toUpperCase("");
+    }).toThrowError("Invalid argument!");
+    console.log("Actual test");
+  });
+
+  it.only("Should throw error on invalid argument - try catch block", (done) => {
+    try {
+      sut.toUpperCase("");
+      done("getStringInfo should throw error for invlaid arg");
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error).toHaveProperty("message", "Invalid argument!");
+      done();
+    }
   });
 });
 
